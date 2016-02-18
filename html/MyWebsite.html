@@ -1,0 +1,446 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Pakshi Web Design Studio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></script>
+    <style type="text/css">
+    body,
+    html {
+        width: 100% height: 100%;
+    }
+    
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 700;
+    }
+    
+    .navbar {
+        opacity: .6;
+    }
+    
+    nav a {
+        font-weight: bold;
+        background-color: #dcdcdc;
+        opacity: 1.0;
+    }
+    
+    .section-template {
+        min-height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+    }
+    
+    #section-1 {
+        background-image: url("https://static.pexels.com/photos/9148/pexels-photo.jpeg");
+    }
+    
+    .section1-content {
+        margin-top: 5px;
+    }
+    
+    .menu-drop-down:hover {
+        background-color: white;
+    }
+    
+    #maintitle {
+        font-family: "arial";
+        text-shadow: -1px -1px 1px #ffffff, 3px 3px 2px #111144;
+        color: #acaccc;
+        font-size: 5em;
+        opacity: 0.7;
+        padding-top: 100px;
+    }
+    
+    #slogan {
+        font-size: 2em;
+        color: #fffff;
+        text-shadow: -1px -1px gray, 1px 1px gray;
+    }
+    
+    .some-buttons {}
+    
+    #twitter-button {
+        background-color: red;
+    }
+    
+    .some-link {
+        box-shadow: 2px 2px 3px black;
+        display: inline-block;
+        padding: 5px 20px;
+        font-family: arial;
+        font-size: 25px;
+        color: black;
+        background-color: #bcbcbc;
+        border: 2px solid black;
+        border-radius: 5px;
+        margin: 0px 10px;
+        transition: transform 0.3s, background-color 0.3s, color 0.3s;
+    }
+    
+    .some-link:hover {
+        text-decoration: none;
+        background-color: black;
+        color: white;
+        box-shadow: 2px 2px 3px black;
+        transform: scale(1.1);
+        transition: transform 0.3s, background-color 0.3s, color 0.3s;
+    }
+    /* SECOND PORTION */
+    
+    #section-2 {
+        background-image: url("https://static.pexels.com/photos/21787/pexels-photo.jpg");
+    }
+    
+    #section2-title {
+        font-family: "arial";
+        color: #000055;
+        text-align: left;
+        font-size: 3em;
+        margin-top: 70px;
+    }
+    
+    .presentation {
+        text-align: left;
+        color: #ffd;
+        font-size: 1.7em;
+        font-family: "Lato";
+    }
+    /* THIRD PORTION */
+    
+    #section-3 {
+        background-image: url("https://static.pexels.com/photos/8892/pexels-photo.jpg");
+    }
+    
+    #portfolio-h3 {
+        text-align: center;
+        text-shadow: 1px 1px 3px black;
+        font-size: 3em;
+        font-family: arial;
+        color: white;
+        margin-top: 70px;
+    }
+    
+    #portfolio-text {
+        color: white;
+        text-align: center;
+        font-size: 1.4em;
+        font-family: Lato;
+        font-weight: 300;
+    }
+    
+    .projects-containers {
+        border: 0px solid #ccc;
+        height: 300px;
+        margin: 15px 0px;
+        background: transparent;
+    }
+    
+    .projects-containers:hover {
+        box-shadow: 7px 10px 4px rgba(0, 0, 0, 0.7);
+        transition: box-shadow 0.4s;
+    }
+    
+    .project-images {
+        background-size: cover;
+        width: 100%;
+        height: 70%;
+        border-radius: 98%;
+    }
+    
+    .project-links {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: background 0.3s;
+    }
+    
+    .projects-rows:last-of-type {
+        margin-bottom: 25px;
+        /*For some extra space at the end of section-3*/
+    }
+    /* PROJECT 1 */
+    
+    #project1-img {
+        background-image: url("https://static.pexels.com/photos/21410/pexels-photo.jpg");
+    }
+    /* PROJECT 2 */
+    
+    #project2-img {
+        background-image: url("https://static.pexels.com/photos/24806/pexels-photo.jpg");
+    }
+    /* PROJECT 3 */
+    
+    #project3-img {
+        background-image: url("https://static.pexels.com/photos/32870/pexels-photo.jpg");
+    }
+    /* PROJECT 4 */
+    
+    #project4-img {
+        background-image: url("https://static.pexels.com/photos/9771/pexels-photo.jpg");
+    }
+    /* PROJECT 5 */
+    
+    #project5-img {
+        background-image: url("https://static.pexels.com/photos/9660/business-money-pink-coins.jpg");
+    }
+    /* PROJECT 6 */
+    
+    #project6-img {
+        background-image: url("https://static.pexels.com/photos/16495/food-pizza-fast-food.jpg");
+    }
+    
+    .project-links:hover {
+        background: rgba(0, 0, 0, 0.7);
+        transition: background 0.5s;
+    }
+    
+    .projects-titles {
+        display: flex;
+        font-family: Lato;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: transparent;
+        color: #ffff;
+        width: 100%;
+        height: 30%;
+    }
+    
+    .projects-titles h4 {
+        text-align: center;
+        font-family: arial;
+        font-size: 1.6em;
+        color: white;
+        margin: 0px;
+    }
+    
+    .projects-titles p {
+        color: white;
+        font-style: oblique;
+    }
+    
+    #section-4 {
+        background-image: url("https://static.pexels.com/photos/4115/sea-dawn-sunset-holiday.jpeg");
+    }
+    
+    .connect-email-message {
+        margin-top: 80px;
+        font-size: 2.4em;
+        color: black;
+    }
+    
+    .some-buttons-lastportion {
+        margin-top: 80px;
+    }
+    
+    .some-buttons-lastportion .some-link {
+        display: inline-block;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+    
+    #footer {
+        background-color: #c3c3c3;
+        min-height: 150px;
+    }
+    
+    .footer-links {
+        margin-top: 40px;
+    }
+    
+    .footer-links a {
+        font-weight: bold;
+    }
+    
+    .list-divider {
+        font-size: 14px;
+    }
+    
+    #legalnotice {
+        margin-top: 20px;
+        color: #666;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">Pakshi</a>
+            </div>
+            <div class="collapse navbar-collapse" id="main-nav">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#section-1">Home</a></li>
+                    <li><a href="#section-2">About</a></li>
+                    <li><a href="#section-3">Portfolio</a></li>
+                    <li><a href="#section-4">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- End of container -->
+    </nav>
+    <!-- End of navbar -->
+    <!-- FIRST PORTION -->
+    <div id="section-1" class="section-template">
+        <div class="container">
+            <div class="row">
+                <div class="section1-content">
+                    <h1 id="maintitle" class="text-center">Pakshi Web Design Studio</h1>
+                    <h3 id="slogan" class="text-center">Where your website is created to stand out.</h3>
+                    <hr>
+                    <!-- Social media buttons -->
+                    <div class="text-center some-buttons">
+                        <a href="#" class="some-link"><i class="fa fa-twitter"></i> Twitter</a>
+                        <a href="https://github.com/rain15" target="_blank" class="some-link"><i class="fa fa-github"></i> Github</a>
+                        <a href="#" class="some-link"><i class="fa fa-linkedin"></i> LinkedIn</a>
+                        <a href="http://www.freecodecamp.com/rain15" class="some-link"><i class="fa fa-fire"></i> FreeCodeCamp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of first portion -->
+    <!-- SECOND PORTION -->
+    <div id="section-2" class="section-template">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 id="section2title" class="text-center">Pakshi Web Design Studio</h3>
+                    <p class="presentation" class="text-center">I'm a self taught web designer, developer based in U.S. I love pudding wafer carrot cake brownie oat cake macaroon. Croissant sesame snaps sweet roll ice cream cake. Chocolate cake candy canes donut liquorice. Liquorice powder cupcake sugar plum pastry liquorice croissant gummi bears dragée. Cupcake carrot cake tootsie roll chupa chups lollipop candy canes sesame snaps. Topping icing cupcake donut gummies chocolate pudding. Pudding jelly-o carrot cake carrot cake candy sugar plum. Chocolate cake jujubes sweet brownie fruitcake dessert chocolate bar apple pie. Apple pie jelly beans chocolate cake. Pudding carrot cake powder danish brownie carrot cake cake. Soufflé cake sweet roll jelly beans macaroon croissant cotton candy powder cupcake. Biscuit wafer tiramisu dragée sugar plum candy. Cotton candy marzipan chocolate jelly cookie tart danish. Marzipan lemon drops gingerbread chocolate. Sesame snaps powder chupa chups jujubes. Pastry gummi bears fruitcake. Gingerbread chupa chups gummi bears pie cookie croissant.</p>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+    </div>
+    <!-- End of second portion -->
+    <!-- THIRD PORTION - THE PORTFOLIO -->
+    <div id="section-3" class="section-template">
+        <div class="container">
+            <h3 id="portfolio-h3">My  Portfolio</h3>
+            <p id="portfolio-text">Below you'll find some dummy projects. I will update them as I do more projects from http://www.freecodecamp.com</p>
+            <div class="row projects-rows">
+                <div class="col-sm-6 col-md-4 projects-containers">
+                    <div id="project1-img" class="project-images">
+                        <a href="#" class="project-links"></a>
+                    </div>
+                    <div id="project1-title" class="projects-titles">
+                        <h4>Website for local train schedule</h4>
+                        <p>Example project</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 projects-containers">
+                    <div id="project2-img" class="project-images">
+                        <a href="#" class="project-links"></a>
+                    </div>
+                    <div id="project2-title" class="projects-titles">
+                        <h4>Website for a Wedding Planning Business</h4>
+                        <p>Example project</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 projects-containers">
+                    <div id="project3-img" class="project-images">
+                        <a href="#" class="project-links"></a>
+                    </div>
+                    <div id="project3-title" class="projects-titles">
+                        <h4>Website for a resort</h4>
+                        <p>Example project</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row projects-rows">
+                <div class="col-sm-6 col-md-4 projects-containers">
+                    <div id="project4-img" class="project-images">
+                        <a href="#" class="project-links"></a>
+                    </div>
+                    <div id="project4-title" class="projects-titles">
+                        <h4>Website for Sports Arena</h4>
+                        <p>Example project</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 projects-containers">
+                    <div id="project5-img" class="project-images">
+                        <a href="#" class="project-links"></a>
+                    </div>
+                    <div id="project5-title" class="projects-titles">
+                        <h4>Website for personal finance</h4>
+                        <p>Example project</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 projects-containers">
+                    <div id="project6-img" class="project-images">
+                        <a href="#" class="project-links"></a>
+                    </div>
+                    <div id="project6-title" class="projects-titles">
+                        <h4>Website for local pizza store</h4>
+                        <p>Example project</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of third portion -->
+    <!-- FOURTH PORTION -->
+    <div id="section-4" class="section-template">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3 class="connect-email-message">
+          Connect with Pakshi Web Design studio:
+          contact@pakshidesign.com
+        </h3>
+                </div>
+                <div class="col-md-4">
+                    <div class="some-buttons-lastportion">
+                        <div class="end-buttons-containers"><a href="#" class="some-link"><i class="fa fa-twitter"></i> Twitter</a></div>
+                        <div class="end-buttons-containers"><a href="https://github.com/rain15" class="some-link"><i class="fa fa-github"></i> Github</a></div>
+                        <div class="end-buttons-containers"><a href="#" class="some-link"><i class="fa fa-linkedin"></i> LinkedIn</a></div>
+                        <div class="end-buttons-containers"><a href="#" class="some-link"><i class="fa fa-fire"></i> FreeCodeCamp</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <div id="footer">
+        <div class="container">
+            <!-- Footer links -->
+            <ul class="list-inline footer-links">
+                <li><a href="#section-1">Home</a></li>
+                <li class="list-divider">&bull;</li>
+                <li><a href="#section-2">About</a></li>
+                <li class="list-divider">&bull;</li>
+                <li><a href="#section-3">Portfolio</a></li>
+                <li class="list-divider">&bull;</li>
+                <li><a href="#section-4">Contact</a></li>
+            </ul>
+            <!-- Footer legal notice -->
+            <p id="legalnotice">Copyright @ Pakshi web design studio 2016. All rights reserved.</p>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
