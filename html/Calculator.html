@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>FreeCodeCamp Javascript Calculator</title>
+    <!-- http://codepen.io/pakshi/pen/VezvaL -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></script>
+    <style type="text/css">
+    @import url(http://fonts.googleapis.com/css?family=Bitter:400,700);
+    body {
+        background-color: #33425b;
+        font-family: 'Lato', sans-serif;
+        font-size: 20px;
+    }
+    
+    h1 {
+        font-family: 'Bitter', cursive;
+        font-size: 20px;
+        margin: 15px auto 5px auto;
+        color: black;
+    }
+    
+    h2 {
+        font-family: 'Lato', sans-serif;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 100;
+        margin: 10px auto 10px auto;
+        color: #7f7870;
+    }
+    
+    .calculator {
+        width: 280px;
+        height: 470px;
+        background-color: #aaffd0;
+        margin: 200px auto auto auto;
+        border-top-left-radius: 50% 20px;
+        border-top-right-radius: 50% 20px;
+        border-bottom-left-radius: 50% 20px;
+        border-bottom-right-radius: 50% 20px;
+        padding: 5px;
+        box-shadow: inset 0px -5px 15px rgba(0, 0, 0, 0.75);
+    }
+    
+    .title {
+        font-family: 'Lato', sans-serif;
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .redBtn {
+        width: 60px;
+        background-color: red;
+        margin: 20px auto auto auto;
+        border-top-left-radius: 50% 20px;
+        border-top-right-radius: 50% 20px;
+        border-bottom-left-radius: 50% 20px;
+        border-bottom-right-radius: 50% 20px;
+        padding: 5px;
+        box-shadow: inset 0px -5px 15px rgba(0, 0, 0, 0.75);
+        font-weight: 900;
+    }
+    
+    .numberBtn {
+        width: 60px;
+        background-color: #aaffd0;
+        margin: 20px auto auto auto;
+        border-top-left-radius: 50% 20px;
+        border-top-right-radius: 50% 20px;
+        border-bottom-left-radius: 50% 20px;
+        border-bottom-right-radius: 50% 20px;
+        padding: 5px;
+        box-shadow: inset 0px -5px 15px rgba(0, 0, 0, 0.75);
+        font-weight: 900;
+        font-size: 15px;
+    }
+    
+    .displayResult {
+        background-color: #d0ddc0;
+        height: 50px;
+        padding: 0px 10px;
+        font-size: 35px;
+        font-family: 'Ubuntu Mono', monospace;
+        font-weight: 700;
+        border-radius: 5px;
+        margin: 20px 10px;
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
+        overflow-x: hidden;
+    }
+    
+    .hiddenBtn {
+        visibility: hidden;
+    }
+    
+    .displayTestArea {
+        background-color: #d0ddc0;
+        height: 500px;
+        padding: 0px 10px;
+        font-size: 15px;
+        font-family: 'Ubuntu Mono', monospace;
+        font-weight: 700;
+        border-radius: 5px;
+        margin: 20px 10px;
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
+        overflow-x: hidden;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="calculator text-center">
+        <div class="title text-center">
+            <h1>FreeCodeCamp</h1>
+            <h2>Electronic Calculator</h2>
+            <div class="displayResult">
+                <span id="calcResult"></span>
+            </div>
+            <div class="row">
+                <button onclick="btnPress('AC')" class="redBtn">AC</button>
+                <button onclick="btnPress('CE')" class="redBtn">CE</button>
+                <button onclick="btnPress('%')" class="numberBtn">%</button>
+                <button onclick="btnPress('/')" class="numberBtn">&div;</button>
+                <button onclick="btnPress('7')" class="numberBtn">7</button>
+                <button onclick="btnPress('8')" class="numberBtn">8</button>
+                <button onclick="btnPress('9')" class="numberBtn">9</button>
+                <button onclick="btnPress('*')" class="numberBtn">x</button>
+                <button onclick="btnPress('4')" class="numberBtn">4</button>
+                <button onclick="btnPress('5')" class="numberBtn">5</button>
+                <button onclick="btnPress('6')" class="numberBtn">6</button>
+                <button onclick="btnPress('-')" class="numberBtn">-</button>
+                <button onclick="btnPress('1')" class="numberBtn">1</button>
+                <button onclick="btnPress('2')" class="numberBtn">2</button>
+                <button onclick="btnPress('3')" class="numberBtn">3</button>
+                <button onclick="btnPress('+')" class="numberBtn">+</button>
+                <button onclick="btnPress('0')" class="numberBtn">0</button>
+                <button onclick="btnPress('.')" class="numberBtn">.</button>
+                <button onclick="btnPress('=')" class="numberBtn">=</button>
+                <button onclick="btnPress('AC')" class="redBtn">AC</button>
+                <!--button onclick="btnPress('')" class="numberBtn hiddenBtn">&nbsp;</button-->
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+var calculatorResult = "",
+  firstPart = "",
+  secondPart = "",
+  operand = "";
+
+function btnPress(btnValue) {
+
+  switch (btnValue) {
+    case 'AC':
+      clear();
+      break;
+    case 'CE':
+      clear();
+      break;
+    case '%':
+    case '+':
+    case '-':
+    case '/':
+    case '*':
+      operator(btnValue);
+      break;
+    case '=':
+      calculateResult();
+      break;
+
+    case '0':
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+    case '9':
+    case '.':
+      onNumberPress(btnValue);
+      break;
+
+    default:
+      break;
+  }
+}
+
+function clear() {
+  firstPart = "";
+  secondPart = "";
+  operand = "";
+  calculatorResult = "";
+  document.getElementById('calcResult').textContent = '';
+
+}
+
+function onNumberPress(btnValue) {
+  var Display = "";
+  if (operand == "") {
+    firstPart = firstPart + btnValue;
+    document.getElementById('calcResult').textContent = firstPart;
+  } else {
+    secondPart = secondPart + btnValue;
+    Display = document.getElementById('calcResult').textContent;
+    document.getElementById('calcResult').textContent = firstPart + operand + secondPart;
+  }
+
+}
+
+function operator(btnValue) {
+  var Display = "";
+
+  // See if the firstPart and secondPart factors have values ie: there has already been an equation
+
+  if (firstPart !== "" && secondPart !== "") {
+
+    calculateResult();
+  }
+  Display = document.getElementById('calcResult').textContent;
+  document.getElementById('calcResult').textContent = Display + ' ' + operand + ' ';
+
+  operand = btnValue;
+}
+
+function calculateResult() {
+  var string;
+  result = 0;
+  if (firstPart != "" && secondPart != "" && operand != "") {
+
+    string = firstPart + ' ' + operand + ' ' + secondPart;
+
+    calculatorResult = eval(string);
+
+    document.getElementById('calcResult').textContent = calculatorResult;
+
+    // Now clear the firstPart, secondPart and operand variables for further use
+    firstPart = calculatorResult;
+    secondPart = "";
+    operand = "";
+  }
+
+}
+
+</script>
