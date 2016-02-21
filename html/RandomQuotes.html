@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Random Quotes Rewritten</title>
+    <!-- http://codepen.io/pakshi/pen/adwzjE -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></script>
+    <style type="text/css">
+    p {
+        font-family: cursive;
+        font-weight: 500;
+        font-size: 2em;
+    }
+    
+    .Heading-Template {
+        font-family: cursive;
+        font-weight: 500;
+        font-size: 1.5em;
+        text-shadow: -1px -1px gray, 1px 1px gray;
+    }
+    
+    .verticalspace {
+        margin-top: 50px;
+    }
+    
+    .author-verticalspace {
+        margin-top: 15px;
+    }
+    
+    .details-template {
+        font-family: "Georgia" "Cambria";
+        font-weight: 500;
+        font-size: 1.5em;
+    }
+    
+    .myButton {
+        -moz-box-shadow: 3px 4px 0px 0px #1564ad;
+        -webkit-box-shadow: 3px 4px 0px 0px #1564ad;
+        box-shadow: 3px 4px 0px 0px #1564ad;
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5));
+        background: -moz-linear-gradient(top, #79bbff 5%, #378de5 100%);
+        background: -webkit-linear-gradient(top, #79bbff 5%, #378de5 100%);
+        background: -o-linear-gradient(top, #79bbff 5%, #378de5 100%);
+        background: -ms-linear-gradient(top, #79bbff 5%, #378de5 100%);
+        background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5', GradientType=0);
+        background-color: #79bbff;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        border: 1px solid #337bc4;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: Times New Roman;
+        font-size: 26px;
+        font-weight: bold;
+        padding: 12px 44px;
+        text-decoration: none;
+        text-shadow: 0px 1px 0px #528ecc;
+    }
+    
+    .myButton:hover {
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff));
+        background: -moz-linear-gradient(top, #378de5 5%, #79bbff 100%);
+        background: -webkit-linear-gradient(top, #378de5 5%, #79bbff 100%);
+        background: -o-linear-gradient(top, #378de5 5%, #79bbff 100%);
+        background: -ms-linear-gradient(top, #378de5 5%, #79bbff 100%);
+        background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff', GradientType=0);
+        background-color: #378de5;
+    }
+    
+    .myButton:active {
+        position: relative;
+        top: 1px;
+    }
+    
+    .inset-text {
+        text-size: 18px;
+        /* Shadows are visible under slightly transparent text color */
+        color: rgba(10, 60, 150, 0.8);
+        text-shadow: 1px 4px 6px #def, 0 0 0 #000, 1px 4px 6px #def;
+    }
+    /* Don't show shadows when selecting text */
+    
+    ::-moz-selection {
+        background: #5af;
+        color: #fff;
+        text-shadow: none;
+    }
+    
+    ::selection {
+        background: #5af;
+        color: #fff;
+        text-shadow: none;
+    }
+    </style>
+</head>
+
+<body>
+    <h2 class="text-center">
+      <div class="Heading-Template">
+      Random Quotes Rewritten
+    </div>
+  </h2>
+    <div class="verticalspace text-center details-template">
+        <p>These are some of my favorite quotes I have collected. I hope you enjoy them.
+        </p>
+    </div>
+    <button type="submit" class="myButton center-block verticalspace " onclick="newQuote()">New Quote</button>
+    <div class="row">
+        <div class="col-md-3">
+            <h1>
+    </h1>
+        </div>
+        <div class="col-md-6">
+            <p id="randomQuote" class="inset-text text-center verticalspace">
+                Imagination is the eye of the soul.
+            </p>
+            <p id="randomQuoteAuthor" class="inset-text text-center author-verticalspace">
+                - Joseph Joubert
+                <a id="linkId" class="btn btn-info" href="https://twitter.com/intent/tweet?text=" target="_blank">
+Tweet</a>
+            </p>
+            <p>
+            </p>
+            <div class="col-md-3">
+                <h1>
+    </h1>
+            </div>
+        </div>
+</body>
+<script type="text/javascript">
+var tweetHTMLStr1 = ' <a id = "linkId" class="btn btn-info" href="https:\/\/twitter.com\/intent\/tweet\?text=';
+var tweetHTMLStr2 = '" target="_blank">Tweet</a>';
+var quotes = [
+    ["Successful people make money. It\'s not that people who make money become successful, but that successful people attract money. They bring success to what they do.", "Wayne Dyer"],
+    ["It was character that got us out of bed, commitment that moved us into action, and discipline that enabled us to follow through.", "Zig Ziglar"],
+    ["If people are not laughing at your goals, your goals are too small.", "Azim Premji"],
+    ["Failure is simply the opportunity to begin again, this time more intelligently.", "Henry Ford"]
+];
+
+function newQuote() {
+    var randomIndex = Math.floor(Math.random() * quotes.length);
+
+    document.getElementById("randomQuote").innerHTML = quotes[randomIndex][0];
+    document.getElementById("randomQuoteAuthor").innerHTML = "- " + quotes[randomIndex][1] + tweetHTMLStr1 + quotes[randomIndex][0] + "-" + quotes[randomIndex][1] + tweetHTMLStr2;
+
+    //document.getElementById("linkId").href = "https://twitter.com/intent/tweet?text=" + quotes[randomIndex][0] + "-" + quotes[randomIndex][1];
+}
+
+
+function openNewWindow() {
+    window.open(document.getElementById("linkId").href, '_blank');
+}
+</script>
